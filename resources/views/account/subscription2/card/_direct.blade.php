@@ -1,0 +1,1 @@
+<a href="{{ action('AccountSubscriptionController@pay') }}" class="btn btn-mc_primary mr-10">{{ trans('messages.subscription.direct.confirm') }}</a>

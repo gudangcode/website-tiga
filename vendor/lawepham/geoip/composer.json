@@ -1,0 +1,17 @@
+{
+    "name": "lawepham/geoip",
+    "description": "Get location information from IP",
+    "authors": [
+        {
+            "name": "Luan Pham",
+            "email": "luanpm88@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Lawepham\\Geoip\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

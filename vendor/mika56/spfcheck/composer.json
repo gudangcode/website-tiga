@@ -1,0 +1,32 @@
+{
+    "name": "mika56/spfcheck",
+    "description": "Checks an IP address against a domain's SPF record",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "4.8.* || 7.*",
+        "symfony/yaml": "~2.1",
+        "satooshi/php-coveralls": "~1.0",
+        "symfony/phpunit-bridge": "^4.2"
+    },
+    "authors": [
+        {
+            "name": "Mikael Peigney",
+            "email": "mikael.peigney@supinfo.com"
+        },
+        {
+            "name": "Brian Tafoya",
+            "email": "btafoya@briantafoya.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "2.8.* || ^3.0 || ^4.0",
+        "php": ">=5.4",
+        "purplepixie/phpdns": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mika56\\SPFCheck\\": "src"
+        }
+    },
+    "license": "MIT"
+}

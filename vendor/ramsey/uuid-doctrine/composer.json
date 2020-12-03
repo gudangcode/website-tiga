@@ -1,0 +1,56 @@
+{
+    "name": "ramsey/uuid-doctrine",
+    "type": "library",
+    "description": "Allow the use of ramsey/uuid as a Doctrine field type.",
+    "keywords": [
+        "uuid",
+        "identifier",
+        "guid",
+        "doctrine",
+        "database"
+    ],
+    "homepage": "https://github.com/ramsey/uuid-doctrine",
+    "license": "MIT",
+    "require": {
+        "php": "^5.4 | ^7 | ^8",
+        "doctrine/orm": "^2.5",
+        "ramsey/uuid": "^3.5 | ^4"
+    },
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "^1",
+        "mockery/mockery": "^0.9 | ^1",
+        "phpunit/phpunit": "^4.8.36 | ^5.7 | ^6.5 | ^7",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Ramsey\\Uuid\\Doctrine\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ramsey\\Uuid\\Doctrine\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": "parallel-lint src tests",
+        "phpcbf": "phpcbf -vpw",
+        "phpcs": "phpcs",
+        "phpunit": "phpunit --verbose --colors=always",
+        "phpunit-coverage": "phpunit --verbose --colors=always --coverage-html build/coverage",
+        "test": [
+            "@lint",
+            "@phpcs --warning-severity=0",
+            "@phpunit"
+        ]
+    },
+    "support": {
+        "issues": "https://github.com/ramsey/uuid-doctrine/issues",
+        "rss": "https://github.com/ramsey/uuid-doctrine/releases.atom",
+        "source": "https://github.com/ramsey/uuid-doctrine",
+        "wiki": "https://github.com/ramsey/uuid/wiki"
+    }
+}

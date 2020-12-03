@@ -1,0 +1,119 @@
+{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "^7.1.3",
+        "acelle/cashier": "dev-master",
+        "aws/aws-php-sns-message-validator": "^1.1",
+        "aws/aws-sdk-php": "^3.19",
+        "braintree/braintree_php": "^3.22",
+        "chumper/zipper": "1.0.*",
+        "coinpaymentsnet/coinpayments-php": "^1.0",
+        "doctrine/dbal": "~2.4",
+        "guzzlehttp/guzzle": "6.3",
+        "guzzlehttp/psr7": "^1.3",
+        "intervention/image": "^2.3",
+        "kub-at/php-simple-html-dom-parser": "^1.9",
+        "laravel/framework": "5.8.*",
+        "laravel/tinker": "^1.0",
+        "lawepham/geoip": "1.6",
+        "league/csv": "^8.0",
+        "louis/log-viewer": "1.2.*",
+        "louis/sendgrid": "dev-master",
+        "mailgun/mailgun-php": "^2.1",
+        "mews/purifier": "^3.2",
+        "mika56/spfcheck": "^1.1",
+        "paypal/paypal-checkout-sdk": "1.0.1",
+        "paypal/rest-api-sdk-php": "^1.11",
+        "php-http/curl-client": "^1.5",
+        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/message": "^1.3",
+        "predis/predis": "^1.1",
+        "ramsey/uuid-doctrine": "^1.6",
+        "rdok/elasticemail-php": "^1.0",
+        "sendgrid/sendgrid": "^5.0",
+        "sendgrid/smtpapi": "^0.5.0",
+        "skyscanner/jsonpath": "^0.7.3",
+        "sparkpost/sparkpost": "^2.1",
+        "swiftmailer/swiftmailer": "~6.0",
+        "symfony/yaml": "^4.4",
+        "tijsverkoyen/css-to-inline-styles": "^2.2",
+        "twig/twig": "^3.0",
+        "zendframework/zend-mail": "^2.7"
+    },
+    "require-dev": {
+        "fideloper/proxy": "^4.0",
+        "filp/whoops": "~2.0",
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "Acelle\\": "app/"
+        },
+        "files": [
+	    "app/Helpers/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "louis/sendgrid",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/louisitvn/sendgrid",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0" : {
+                        "Acelle\\Extra": "src"
+                    }
+                },
+                "require" : {
+                    "guzzlehttp/psr7": "^1.4"
+                }
+            }
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/louisitvn/log-viewer"
+        }, {
+            "type": "vcs",
+            "url": "https://github.com/luanpm88/lawepham-geoip"
+        }, {
+            "type": "vcs",
+            "url": "https://github.com/luanpm88/acelle-cashier"
+        }
+    ]
+}

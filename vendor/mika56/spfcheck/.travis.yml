@@ -1,0 +1,32 @@
+sudo: required
+
+language: php
+
+services:
+  - docker
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - nightly
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+  - docker run -d --rm --name pdns -p 53:53/udp -p 53:53/tcp -p 80:80 -e "WEBPASSWD=password" raspberrypython/powerdns-sqlite3:latest
+
+script:
+  - mkdir -p build/logs
+  - vendor/bin/phpunit
+
+after_success:
+  - travis_retry php vendor/bin/coveralls
